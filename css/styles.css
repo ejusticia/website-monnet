@@ -211,7 +211,12 @@ nav ul a.nav-active{color:var(--ink);font-weight:600}
 .hero-sol-mockup .sol-mockup .sm-bank,.hero-sol-mockup .sol-mockup .sm-bank-chile{padding:12px 14px}
 .hero-sol-mockup .sol-mockup .sm-secure{font-size:10px;margin:0}
 .hero-sol-mockup .sol-mockup .sm-dash-stat-value{font-size:18px}
-.hero-sol-mockup .sol-mockup.sol-mockup-payout-pro{display:flex;flex-direction:column;max-height:380px;min-width:0}
+.hero-sol-mockup .sol-mockup.sol-mockup-payout-pro{
+  display:flex;
+  flex-direction:column;
+  max-height:none;
+  min-width:0;
+}
 .hero-sol-mockup .sol-mockup .po-pro-header{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:12px 14px 10px;border-bottom:1px solid var(--line2)}
 .hero-sol-mockup .sol-mockup .po-pro-header .po-pro-title{flex:0 1 auto;min-width:0}
 .hero-sol-mockup .sol-mockup .po-pro-steps{width:100%;margin-left:0;margin-top:2px;justify-content:flex-start;flex-shrink:0}
@@ -227,20 +232,24 @@ nav ul a.nav-active{color:var(--ink);font-weight:600}
 .hero-sol-mockup .sol-mockup-tienda .sm-payin-btn:hover{background:var(--brand-dark);box-shadow:0 4px 20px rgba(57,90,232,.3)}
 
 /* Payins: tienda que cobra con Monnet (checkout) */
-.mockup-store-checkout .sm-store{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.mockup-store-checkout{
+  padding:24px 24px 20px;
+  border-radius:24px;
+}
+.mockup-store-checkout .sm-store{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px}
 .mockup-store-checkout .sm-store-name{font-weight:600;color:var(--ink)}
-.mockup-store-checkout .sm-store-badge{font-size:10px;color:var(--ink4);margin-left:auto}
-.mockup-store-checkout .sm-cart-summary{font-size:11px;color:var(--ink3);margin-bottom:10px}
-.mockup-store-checkout .sm-payment-method{display:flex;flex-direction:column;gap:4px;margin-bottom:14px;padding:10px 12px;background:var(--green-bg);border:1px solid var(--green-bd);border-radius:10px}
-.mockup-store-checkout .sm-payment-label{font-size:10px;font-weight:600;letter-spacing:.04em;color:var(--ink4);text-transform:uppercase}
-.mockup-store-checkout .sm-payment-value{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--green)}
+.mockup-store-checkout .sm-store-badge{font-size:11px;color:var(--ink4);margin-left:auto}
+.mockup-store-checkout .sm-cart-summary{font-size:11.5px;color:var(--ink3);margin-bottom:12px}
+.mockup-store-checkout .sm-payment-method{display:flex;flex-direction:column;gap:4px;margin-bottom:16px;padding:12px 14px;background:#EEF2FF;border:1px solid var(--green-bd);border-radius:12px}
+.mockup-store-checkout .sm-payment-label{font-size:10px;font-weight:600;letter-spacing:.06em;color:var(--ink4);text-transform:uppercase}
+.mockup-store-checkout .sm-payment-value{display:flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;color:var(--green)}
 .mockup-store-checkout .sm-monnet-dot{width:6px;height:6px;border-radius:50%;background:var(--green);flex-shrink:0}
-.mockup-store-checkout .sm-secure.sm-powered{margin-top:12px;padding-top:10px;border-top:1px solid var(--line2);font-size:10px;color:var(--ink4)}
+.mockup-store-checkout .sm-secure.sm-powered{margin-top:14px;padding-top:10px;border-top:1px solid var(--line2);font-size:10.5px;color:var(--ink4)}
 .mockup-store-checkout .sm-secure.sm-powered strong{color:var(--green);font-weight:600}
-.mockup-store-checkout .sm-pay-btn{margin-top:10px;width:100%;padding:11px 0;border-radius:10px;border:none;background:var(--green);color:#fff;font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;transition:background .18s,box-shadow .18s,transform .18s}
-.mockup-store-checkout .sm-pay-btn span{font-size:12px;opacity:.8}
-.mockup-store-checkout .sm-pay-btn:hover{background:var(--brand-dark);box-shadow:0 6px 18px rgba(57,90,232,.28);transform:translateY(-1px)}
-.mockup-store-checkout .sm-pay-btn:active{transform:translateY(0);box-shadow:0 2px 8px rgba(57,90,232,.18)}
+.mockup-store-checkout .sm-pay-btn{margin-top:10px;width:100%;padding:13px 0;border-radius:999px;border:none;background:var(--green);color:#fff;font-size:13.5px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;transition:background .18s,box-shadow .18s,transform .18s}
+.mockup-store-checkout .sm-pay-btn span{font-size:12.5px;opacity:.9}
+.mockup-store-checkout .sm-pay-btn:hover{background:var(--brand-dark);box-shadow:0 10px 26px rgba(57,90,232,.35);transform:translateY(-1px)}
+.mockup-store-checkout .sm-pay-btn:active{transform:translateY(0);box-shadow:0 2px 8px rgba(57,90,232,.2)}
 
 /* Payouts: backoffice desde donde se acciona la dispersión */
 .mockup-backoffice .po-backoffice-header{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:var(--bg2);padding:10px 12px;border-radius:14px;margin:0 0 12px}
