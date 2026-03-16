@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — Real-time visibility and controls | Monnet</title>
+<meta name="description" content="One dashboard for payins, payouts and balances across LATAM. Real-time metrics, reconciliation, 99.97% uptime SLA. API and UI for developers and ops.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.monnet.com/solutions/platform.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.monnet.com/solutions/platform.html">
+<meta property="og:title" content="Dashboard — Real-time visibility | Monnet">
+<meta property="og:description" content="One dashboard for all payments across LATAM. Real-time metrics, reconciliation, 99.97% uptime.">
+<meta property="og:image" content="https://www.monnet.com/assets/og-image.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Dashboard — Real-time visibility | Monnet">
+<meta name="twitter:description" content="One dashboard for payins, payouts and balances. 99.97% uptime.">
+<meta name="twitter:image" content="https://www.monnet.com/assets/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="page-solution page-platform">
+
+<nav id="nav" class="stuck">
+  <div class="nav-i">
+    <a href="../index.html" class="logo">
+      <img src="../assets/monnet-logo.svg" alt="Monnet" class="logo-img">
+    </a>
+    <ul>
+      <li class="nav-dropdown">
+        <a href="../index.html#products">Solutions</a>
+        <ul class="nav-dropdown-menu">
+          <li><a href="payins.html">Payins</a></li>
+          <li><a href="payouts.html">Payouts</a></li>
+          <li><a href="platform.html" class="nav-active">Dashboard</a></li>
+        </ul>
+      </li>
+      <li><a href="../coverage.html">Coverage</a></li>
+      <li><a href="../index.html#use-cases">Use Cases</a></li>
+      <li><a href="../about.html">Company</a></li>
+      <li><a href="#">Docs</a></li>
+    </ul>
+    <div class="nav-end">
+      <a href="#" class="nav-login">Log in</a>
+      <a href="../index.html#cta" class="btn btn-dark" style="padding:8px 18px;font-size:13.5px">Get started</a>
+    </div>
+  </div>
+</nav>
+
+<section id="hero" class="hero-has-mockup">
+  <div class="hero-bg"></div>
+  <div class="hero-inner wrap-wide">
+    <div class="hero-left">
+      <div class="eyebrow rv">Solutions</div>
+      <h1 class="display hero-title rv"><em>Dashboard</em></h1>
+      <p class="hero-sub rv">One place to see every payment, balance, and market. Real-time visibility, reconciliation, and controls. 99.97% uptime SLA — built by developers for developers, with world-class security.</p>
+      <div class="hero-actions rv">
+        <a href="../index.html#cta" class="btn btn-dark btn-lg">Get platform access</a>
+        <a href="#why" class="btn btn-ghost btn-lg">Learn more</a>
+      </div>
+      <div class="hero-trust rv">
+        <span class="trust-item">99.97% uptime</span>
+        <span class="trust-div">·</span>
+        <span class="trust-item">2FA · AES-256</span>
+        <span class="trust-div">·</span>
+        <span class="trust-item">API + Dashboard</span>
+      </div>
+    </div>
+    <div class="hero-right rv-pop">
+      <div class="hero-dash-inline" id="platformDash">
+        <div class="hero-dash-card">
+          <div class="hero-dash-header">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiIgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0ibHVtYSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiM1QjRGRkYiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMzk1YWU4Ii8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHJ4PSI4IiBmaWxsPSJ1cmwoI2x1bWEpIi8+CiAgPHBhdGggZD0iTTEwIDloM3YxMWg3djJIMTBWOXoiIGZpbGw9IiNmZmYiLz4KPC9zdmc+Cg==" alt="Luma Store dashboard logo" class="sm-store-logo">Luma Store · Overview
+          </div>
+          <div class="hero-dash-body">
+            <div class="hero-dash-kpis">
+              <div class="hero-dash-kpi dash-panel-anim" data-d="0">
+                <h4>Volume today</h4>
+                <div class="big" id="dashVol">$0</div>
+                <div class="sub">↑ 12.4% vs yesterday</div>
+              </div>
+              <div class="hero-dash-kpi dash-panel-anim" data-d="50">
+                <h4>Transactions</h4>
+                <div class="big" id="dashTxns">0</div>
+                <div class="sub">↑ 8.2% vs yesterday</div>
+              </div>
+              <div class="hero-dash-kpi dash-panel-anim" data-d="100">
+                <h4>Success rate</h4>
+                <div class="big" id="dashSuccess">98.7%</div>
+                <div class="sub">Last 24h</div>
+              </div>
+              <div class="hero-dash-kpi dash-panel-anim" data-d="150">
+                <h4>Avg. payout</h4>
+                <div class="big">&lt;50s</div>
+                <div class="sub">97.6% &lt;1 min</div>
+              </div>
+            </div>
+            <div class="hero-dash-chart-methods dash-panel-anim" data-d="100">
+              <h4>Transactions by payment method</h4>
+              <div class="hero-method-bars">
+                <div class="hero-method-row"><span class="method-name">Bank transfer</span><div class="method-bar-wrap"><div class="method-bar" data-w="52"></div></div><span class="method-pct">52%</span></div>
+                <div class="hero-method-row"><span class="method-name">PIX</span><div class="method-bar-wrap"><div class="method-bar" data-w="28"></div></div><span class="method-pct">28%</span></div>
+                <div class="hero-method-row"><span class="method-name">Cards</span><div class="method-bar-wrap"><div class="method-bar" data-w="14"></div></div><span class="method-pct">14%</span></div>
+                <div class="hero-method-row"><span class="method-name">SPEI / PSE</span><div class="method-bar-wrap"><div class="method-bar" data-w="6"></div></div><span class="method-pct">6%</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-dash-trx">
+            <h4 class="hero-dash-trx-title"><span>Live transactions</span><span class="hero-dash-trx-badge">Live</span></h4>
+            <div class="hero-dash-trx-grid-wrap">
+              <div class="hero-dash-trx-grid" id="heroTrxGrid">
+                <div class="hero-dash-trx-row"><span class="trx-time">14:32:01</span><span class="trx-id">pay_8f2a…</span><span class="trx-amt">+$129</span><span class="trx-method">Bank · CL</span><span class="trx-status ok">✓</span></div>
+                <div class="hero-dash-trx-row"><span class="trx-time">14:31:58</span><span class="trx-id">pay_3c91…</span><span class="trx-amt">+R$ 420</span><span class="trx-method">PIX</span><span class="trx-status ok">✓</span></div>
+                <div class="hero-dash-trx-row"><span class="trx-time">14:31:42</span><span class="trx-id">pay_7e44…</span><span class="trx-amt">+$2.4k</span><span class="trx-method">SPEI</span><span class="trx-status ok">✓</span></div>
+                <div class="hero-dash-trx-row"><span class="trx-time">14:31:28</span><span class="trx-id">pay_1b66…</span><span class="trx-amt">+$185</span><span class="trx-method">PSE</span><span class="trx-status ok">✓</span></div>
+                <div class="hero-dash-trx-row"><span class="trx-time">14:31:15</span><span class="trx-id">pay_9d22…</span><span class="trx-amt">+S/ 890</span><span class="trx-method">Bank · PE</span><span class="trx-status pending">…</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sol-metrics">
+  <div class="wrap">
+    <div class="sol-metrics-grid rv" data-d="60">
+      <div class="sol-metric">
+        <div class="sol-metric-value">99.97<span>%</span></div>
+        <div class="sol-metric-label">Uptime SLA</div>
+      </div>
+      <div class="sol-metric">
+        <div class="sol-metric-value">Real-time</div>
+        <div class="sol-metric-label">Visibility & reporting</div>
+      </div>
+      <div class="sol-metric">
+        <div class="sol-metric-value">2FA</div>
+        <div class="sol-metric-label">Secure access</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="why" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <h2>Why <em>Dashboard</em></h2>
+      <p>Unified view across countries and products. No spreadsheets — one dashboard, one API. We commit to 99.97% uptime so your operations never wait.</p>
+    </div>
+    <div class="sol-benefits rv" data-d="80">
+      <div class="sol-benefit-card">
+        <span class="sol-benefit-ico">📊</span>
+        <h3>Full visibility</h3>
+        <p>Payins, payouts, balances, and FX in one place. Real-time, per market. Filter by country, product, or time range. Export and reconcile in a few clicks.</p>
+      </div>
+      <div class="sol-benefit-card">
+        <span class="sol-benefit-ico">🛡️</span>
+        <h3>99.97% uptime</h3>
+        <p>Service you can rely on. We commit to it and back it with SLAs. Status page, incident comms, and a team that treats reliability as a product.</p>
+      </div>
+      <div class="sol-benefit-card">
+        <span class="sol-benefit-ico">🔒</span>
+        <h3>World-class security</h3>
+        <p>AES-256, 2FA, audit logs. Role-based access so only the right people see data. Built for compliance and enterprise trust.</p>
+      </div>
+    </div>
+    <div class="sol-industries rv" data-d="100">
+      <p class="sol-industries-title">Ideal for</p>
+      <div class="sol-industries-list">
+        <span>Finance & Ops teams</span>
+        <span>Developers & DevOps</span>
+        <span>Multi-country merchants</span>
+        <span>Marketplaces & platforms</span>
+        <span>Fintech & Neobanks</span>
+        <span>Enterprise treasury</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sol-dev-block rv" data-d="80">
+      <div class="sec-head center">
+        <h2>Built for <em>developers</em></h2>
+        <p>API-first platform with a dashboard for ops and finance. Full visibility via API or UI. Docs, webhooks, sandbox. World-class security so you can ship with confidence.</p>
+      </div>
+      <div class="sol-dev-feats">
+        <div class="sol-dev-feat"><span class="sol-dev-feat-dot"></span>API for all data; dashboard for humans</div>
+        <div class="sol-dev-feat"><span class="sol-dev-feat-dot"></span>Webhooks for real-time events and reconciliation</div>
+        <div class="sol-dev-feat"><span class="sol-dev-feat-dot"></span>Sandbox with full feature set and test data</div>
+        <div class="sol-dev-feat"><span class="sol-dev-feat-dot"></span>AES-256, 2FA, audit logs — standard worldwide</div>
+      </div>
+      <div class="sol-dev-ctas">
+        <a href="../index.html#cta" class="btn btn-dark">Get platform access</a>
+        <a href="#" class="btn btn-ghost">View documentation</a>
+      </div>
+      <div class="sol-terminal-wrap rv" data-d="120">
+        <div class="sol-terminal-header">
+          <span class="sol-terminal-dot r"></span>
+          <span class="sol-terminal-dot y"></span>
+          <span class="sol-terminal-dot g"></span>
+          <span class="sol-terminal-title">terminal — list transactions</span>
+        </div>
+        <div class="sol-terminal">
+          <span class="line"><span class="cmd">$</span> curl https://api.monnet.com/v1/transactions?from=2025-03-01 \</span>
+          <span class="line">  -H <span class="str">"Authorization: Bearer sk_live_..."</span></span>
+          <span class="line"><span class="str">{"data":[{"id":"tx_1","amount":12900,"currency":"USD","status":"succeeded",...}],"has_more":true}</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--ink);padding:80px 0;position:relative;overflow:hidden">
+  <div class="cta-glow"></div>
+  <div class="wrap">
+    <div class="cta-inner rv" style="position:relative;z-index:1">
+      <h2 style="color:#fff;margin-bottom:16px">Get full visibility <em style="color:var(--green)">today.</em></h2>
+      <p class="lead" style="color:rgba(255,255,255,.5);margin-bottom:32px">99.97% uptime. One platform. API + dashboard. Talk to sales or try the sandbox.</p>
+      <a href="../index.html#cta" class="btn btn-green btn-lg">Contact Sales</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="../index.html" class="logo logo-footer">
+          <img src="../assets/monnet-logo.svg" alt="Monnet" class="logo-img">
+        </a>
+        <p>Transactional technology for Latin America. One API. All markets.</p>
+        <div class="socials"><a href="#" class="soc">in</a><a href="#" class="soc">𝕏</a><a href="#" class="soc">yt</a></div>
+      </div>
+      <div class="fcol"><h5>Products</h5><a href="payins.html">Payins</a><a href="payouts.html">Payouts</a><a href="platform.html">Platform</a><a href="#">Dashboard</a></div>
+      <div class="fcol"><h5>Developers</h5><a href="#">API Reference</a><a href="#">SDKs</a><a href="#">Sandbox</a><a href="#">Status</a></div>
+      <div class="fcol"><h5>Company</h5><a href="../about.html">About</a><a href="../coverage.html">Coverage</a><a href="../about.html#security">Security</a><a href="#">Contact</a></div>
+    </div>
+  </div>
+  <div class="foot-bottom wrap">
+    <p>© 2025 Monnet Payment Solutions. All rights reserved.</p>
+    <div class="foot-legal"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a></div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+(function() {
+  var dash = document.getElementById('platformDash');
+  var volEl = document.getElementById('dashVol');
+  var txnsEl = document.getElementById('dashTxns');
+  var panels = document.querySelectorAll('#platformDash .dash-panel-anim');
+  var methodBars = dash ? dash.querySelectorAll('.method-bar[data-w]') : [];
+  var started = false;
+
+  function runAnimations() {
+    if (started) return;
+    started = true;
+
+    panels.forEach(function(p) {
+      var d = parseInt(p.getAttribute('data-d') || 0, 10);
+      setTimeout(function() { p.classList.add('visible'); }, d);
+    });
+
+    if (volEl) {
+      var v0 = 0, v1 = 1.84, t0 = performance.now(), dur = 1800;
+      function tickVol(now) {
+        var p = Math.min((now - t0) / dur, 1);
+        var ease = 1 - Math.pow(1 - p, 2);
+        var v = v0 + (v1 - v0) * ease;
+        volEl.textContent = '$' + v.toFixed(2) + 'M';
+        if (p < 1) requestAnimationFrame(tickVol);
+      }
+      requestAnimationFrame(tickVol);
+    }
+
+    if (txnsEl) {
+      var n0 = 0, n1 = 2847, t0 = performance.now(), dur = 1600;
+      function tickTxns(now) {
+        var p = Math.min((now - t0) / dur, 1);
+        var ease = 1 - Math.pow(1 - p, 2);
+        txnsEl.textContent = Math.round(n0 + (n1 - n0) * ease).toLocaleString();
+        if (p < 1) requestAnimationFrame(tickTxns);
+      }
+      requestAnimationFrame(tickTxns);
+    }
+
+    methodBars.forEach(function(m, i) {
+      var w = m.getAttribute('data-w') || 0;
+      setTimeout(function() { m.style.width = w + '%'; }, 400 + i * 120);
+    });
+
+    if (volEl) {
+      setInterval(function() {
+        var v = 1.82 + (Math.random() * 0.12 - 0.04);
+        v = Math.max(1.72, Math.min(1.98, v));
+        volEl.textContent = '$' + v.toFixed(2) + 'M';
+      }, 4000);
+    }
+
+    // Live trx grid: nueva fila cada ~2.8s
+    var trxGrid = document.getElementById('heroTrxGrid');
+    if (trxGrid) {
+      var methodTpl = [
+        { m: 'Bank · CL', amt: function() { return '+$' + (80 + Math.floor(Math.random() * 400)); } },
+        { m: 'PIX', amt: function() { return '+R$ ' + (100 + Math.floor(Math.random() * 500)); } },
+        { m: 'SPEI', amt: function() { return '+$' + (50 + Math.floor(Math.random() * 200)); } },
+        { m: 'PSE', amt: function() { return '+$' + (100 + Math.floor(Math.random() * 300)); } },
+        { m: 'Card', amt: function() { return '+$' + (20 + Math.floor(Math.random() * 150)); } },
+        { m: 'Bank · PE', amt: function() { return '+S/ ' + (200 + Math.floor(Math.random() * 800)); } }
+      ];
+      function pad2(n) { return (n < 10 ? '0' : '') + n; }
+      function addLiveRow() {
+        var d = new Date();
+        var time = pad2(d.getHours()) + ':' + pad2(d.getMinutes()) + ':' + pad2(d.getSeconds());
+        var item = methodTpl[Math.floor(Math.random() * methodTpl.length)];
+        var status = Math.random() > 0.15 ? 'ok' : 'pending';
+        var statusHtml = status === 'ok' ? '<span class="trx-status ok">✓</span>' : '<span class="trx-status pending">…</span>';
+        var row = document.createElement('div');
+        row.className = 'hero-dash-trx-row new-row';
+        row.innerHTML = '<span class="trx-time">' + time + '</span><span class="trx-id">pay_' + Math.random().toString(36).slice(2, 6) + '…</span><span class="trx-amt">' + item.amt() + '</span><span class="trx-method">' + item.m + '</span>' + statusHtml;
+        trxGrid.insertBefore(row, trxGrid.firstChild);
+        if (trxGrid.children.length > 6) trxGrid.removeChild(trxGrid.lastChild);
+      }
+      setTimeout(function() { setInterval(addLiveRow, 2800); }, 1500);
+    }
+  }
+
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) { if (e.isIntersecting) runAnimations(); });
+  }, { threshold: 0.2 });
+  if (dash) obs.observe(dash);
+})();
+</script>
+</body>
+</html>

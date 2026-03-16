@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monnet — Payment Infrastructure for Latin America</title>
+  <meta name="robots" content="index, follow">
+  <script>
+    (function() {
+      var STORAGE_KEY = 'monnet_locale';
+      function getLocale() {
+        try {
+          var s = localStorage.getItem(STORAGE_KEY);
+          if (s === 'es' || s === 'en') return s;
+        } catch (e) {}
+        var lang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+        return (lang.indexOf('es') === 0) ? 'es' : 'en';
+      }
+      var pathname = location.pathname || '';
+      var isRoot = pathname === '/' || pathname === '' || pathname === '/index.html' || pathname.slice(-11) === '/index.html';
+
+      // Si abres el archivo directamente (file://), no redirigir: mostrar enlaces
+      if (location.protocol === 'file:') {
+        document.documentElement.classList.add('file-mode');
+        return;
+      }
+
+      if (isRoot) {
+        var locale = getLocale();
+        var base = (pathname === '/' || pathname === '') ? '' : pathname.replace(/\/index\.html$/i, '').replace(/\/?$/, '');
+        var target = base + '/' + locale + '/index.html';
+        location.replace(location.origin + target);
+      }
+    })();
+  </script>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 0; padding: 2rem; background: #f5f5f5; color: #333; }
+    .file-mode .redirect-msg { display: none; }
+    .file-mode .choose-msg { display: block; }
+    .redirect-msg { margin: 2rem 0; color: #666; }
+    .choose-msg { display: none; margin: 2rem 0; max-width: 360px; }
+    .choose-msg h1 { font-size: 1.5rem; margin-bottom: 1rem; }
+    .choose-msg p { color: #666; margin-bottom: 1.5rem; }
+    .lang-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .lang-links a { display: inline-block; padding: 12px 24px; background: #395ae8; color: #fff; text-decoration: none; border-radius: 10px; font-weight: 600; }
+    .lang-links a:hover { background: #4e2cd1; }
+  </style>
+</head>
+<body>
+  <p class="redirect-msg">Redirecting…</p>
+  <div class="choose-msg">
+    <h1>Monnet</h1>
+    <p>Elige idioma / Choose language:</p>
+    <div class="lang-links">
+      <a href="es/index.html">Español</a>
+      <a href="en/index.html">English</a>
+    </div>
+  </div>
+</body>
+</html>

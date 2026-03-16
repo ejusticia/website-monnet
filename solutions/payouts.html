@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payouts — Send money to bank accounts across LATAM | Monnet</title>
+<meta name="description" content="Send payouts to bank accounts across Latin America in real time. 97.6% complete in under 1 minute. One API for single or mass disbursements. 2FA, AES-256.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.monnet.com/solutions/payouts.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.monnet.com/solutions/payouts.html">
+<meta property="og:title" content="Payouts — Send money across LATAM | Monnet">
+<meta property="og:description" content="Payouts to bank accounts in LATAM. 97.6% in under 1 min. One API for mass or single disbursements.">
+<meta property="og:image" content="https://www.monnet.com/assets/og-image.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Payouts — Send money across LATAM | Monnet">
+<meta name="twitter:description" content="97.6% of payouts in under 1 minute. One API for mass disbursements.">
+<meta name="twitter:image" content="https://www.monnet.com/assets/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="page-solution page-payouts">
+
+<nav id="nav" class="stuck">
+  <div class="nav-i">
+    <a href="../index.html" class="logo">
+      <img src="../assets/monnet-logo.svg" alt="Monnet" class="logo-img">
+    </a>
+    <ul>
+      <li class="nav-dropdown">
+        <a href="../index.html#products">Solutions</a>
+        <ul class="nav-dropdown-menu">
+          <li><a href="payins.html">Payins</a></li>
+          <li><a href="payouts.html" class="nav-active">Payouts</a></li>
+          <li><a href="platform.html">Dashboard</a></li>
+        </ul>
+      </li>
+      <li><a href="../coverage.html">Coverage</a></li>
+      <li><a href="../index.html#use-cases">Use Cases</a></li>
+      <li><a href="../about.html">Company</a></li>
+      <li><a href="#">Docs</a></li>
+    </ul>
+    <div class="nav-end">
+      <a href="#" class="nav-login">Log in</a>
+      <a href="../index.html#cta" class="btn btn-dark" style="padding:8px 18px;font-size:13.5px">Get started</a>
+    </div>
+  </div>
+</nav>
+
+<section id="hero" class="hero-has-mockup">
+  <div class="hero-bg"></div>
+  <div class="hero-inner wrap-wide">
+    <div class="hero-left">
+      <div class="eyebrow rv">Solutions</div>
+      <h1 class="display hero-title rv">Payouts</h1>
+      <p class="hero-sub rv">Send money to bank accounts across LATAM in real time. 97.6% of disbursements complete in under one minute. One API for single or mass payouts — built by developers for developers, with world-class security.</p>
+      <div class="hero-actions rv">
+        <a href="../index.html#cta" class="btn btn-dark btn-lg">Integrate Payouts</a>
+        <a href="#why" class="btn btn-ghost btn-lg">Learn more</a>
+      </div>
+      <div class="hero-trust rv">
+        <span class="trust-item">97.6% &lt;1 min</span>
+        <span class="trust-div">·</span>
+        <span class="trust-item">2FA · AES-256</span>
+        <span class="trust-div">·</span>
+        <span class="trust-item">One API</span>
+      </div>
+    </div>
+    <div class="hero-right rv-pop">
+      <div class="hero-sol-mockup">
+        <div class="sol-mockup sol-mockup-payout sol-mockup-payout-pro" id="payoutHeroMock">
+          <div class="po-pro-header">
+            <img src="../assets/merchant-luma-logo.svg" alt="Dashboard merchant logo" class="sm-store-logo">
+            <span class="po-pro-title">Nueva dispersión</span>
+            <div class="po-pro-steps">
+              <span class="po-step active" data-step="1">1. Fichero</span>
+              <span class="po-step" data-step="2">2. Validar</span>
+              <span class="po-step" data-step="3">3. Enviar</span>
+            </div>
+          </div>
+          <div class="po-pro-body">
+            <!-- Paso 1: Cargar fichero -->
+            <div class="po-pro-screen po-screen-upload active" data-screen="1">
+              <div class="po-upload-zone" id="poUploadZone">
+                <div class="po-upload-icon">📄</div>
+                <p class="po-upload-text">Arrastra tu CSV o haz clic para subir</p>
+                <p class="po-upload-hint">Nombre, banco, cuenta, monto, moneda</p>
+              </div>
+              <div class="po-upload-done" id="poUploadDone">
+                <span class="po-file-icon">✓</span>
+                <div class="po-file-info">
+                  <strong>disbursement_mar12.csv</strong>
+                  <small>142 beneficiarios · $48,200</small>
+                </div>
+              </div>
+            </div>
+            <!-- Paso 2: Validar -->
+            <div class="po-pro-screen po-screen-validate" data-screen="2">
+              <div class="po-validate-status" id="poValidateStatus">
+                <span class="po-validate-spinner"></span>
+                <p>Validando 142 beneficiarios…</p>
+              </div>
+              <div class="po-validate-done" id="poValidateDone">
+                <span class="po-validate-ok">✓</span>
+                <p><strong>Listo para dispersar</strong></p>
+                <p class="po-validate-summary">$48,200 · 142 beneficiarios · 5 países</p>
+              </div>
+            </div>
+            <!-- Paso 3: Ejecutar -->
+            <div class="po-pro-screen po-screen-send" data-screen="3">
+              <div class="po-send-summary">
+                <div class="po-send-row"><span>Total</span><strong>$48.2k</strong></div>
+                <div class="po-send-row"><span>Beneficiarios</span><strong>142</strong></div>
+              </div>
+              <div class="po-send-list">
+                <div class="po-send-item"><span class="po-av" style="background:#4e2cd1">CM</span><span class="po-name">Carlos M.</span><span class="po-amt">S/ 850</span><span class="po-st" id="poSt1">✓</span></div>
+                <div class="po-send-item"><span class="po-av" style="background:#00B890">AL</span><span class="po-name">Ana L.</span><span class="po-amt">$42k</span><span class="po-st" id="poSt2">✓</span></div>
+                <div class="po-send-item"><span class="po-av" style="background:#8B5CF6">JR</span><span class="po-name">Jorge R.</span><span class="po-amt">$185k</span><span class="po-st" id="poSt3">…</span></div>
+              </div>
+              <div class="po-send-progress">
+                <div class="po-progress-bar"><div class="po-progress-fill" id="poProgressFill"></div></div>
+                <p class="po-progress-text" id="poProgressText">Enviando… 2/142</p>
+              </div>
+              <button type="button" class="po-send-btn" id="poSendBtn">Ejecutar dispersión</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sol-metrics">
+  <div class="wrap">
+    <div class="sol-metrics-grid rv" data-d="60">
+      <div class="sol-metric">
+        <div class="sol-metric-value">97.6<span>%</span></div>
+        <div class="sol-metric-label">Disbursed in &lt;1 min</div>
+      </div>
+      <div class="sol-metric">
+        <div class="sol-metric-value">1</div>
+        <div class="sol-metric-label">API call for mass payouts</div>
+      </div>
+      <div class="sol-metric">
+        <div class="sol-metric-value">2FA</div>
+        <div class="sol-metric-label">Secure access</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="why" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <h2>Why <em>Payouts</em></h2>
+      <p>Direct to bank. No intermediaries. We commit to speed and reliability — 97.6% of payouts land in under one minute — with the same security standards enterprises expect.</p>
+    </div>
+    <div class="sol-benefits rv" data-d="80">
+      <div class="sol-benefit-card">
+        <span class="sol-benefit-ico">⚡</span>
+        <h3>Speed SLA</h3>
+        <p>97.6% of disbursements complete in under one minute. Real-time settlement, not next-day. We measure it and back it.</p>
+      </div>
+      <div class="sol-benefit-card">
+        <span class="sol-benefit-ico">📤</span>
+        <h3>Mass or single</h3>
+        <p>One API call to pay hundreds or thousands of recipients. Or one-to-one. Same integration, same reliability.</p>
+      </div>
+      <div class="sol-benefit-card">
+        <span class="sol-benefit-ico">🔒</span>
+        <h3>World-class security</h3>
+        <p>AES-256, 2FA for platform access, PCI DSS. Built for compliance from day one so you can scale with confidence.</p>
+      </div>
+    </div>
+    <div class="sol-industries rv" data-d="100">
+      <p class="sol-industries-title">Ideal for</p>
+      <div class="sol-industries-list">
+        <span>Gig economy & marketplaces</span>
+        <span>Payroll & HR</span>
+        <span>Insurance & claims</span>
+        <span>E-commerce refunds</span>
+        <span>Supplier payments</span>
+        <span>Creator payouts</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sol-who-benefits">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <div class="eyebrow">Use cases</div>
+      <h2>What we solve for <em>businesses and their recipients</em></h2>
+      <p>We help you send money to bank accounts across LATAM in real time. You get one API, fewer failed payouts and less ops; your recipients get funds in under a minute, in their currency and their bank.</p>
+    </div>
+    <div class="sol-benefits-teaser rv" data-d="60">
+      <div class="sol-teaser-item">
+        <span class="sol-teaser-ico">🚗</span>
+        <h3>Gig & marketplaces</h3>
+        <p>Pay drivers, couriers and sellers when they earn. Real-time, mass or single, local currency.</p>
+      </div>
+      <div class="sol-teaser-item">
+        <span class="sol-teaser-ico">💼</span>
+        <h3>Payroll, suppliers & claims</h3>
+        <p>One integration for salaries, vendor payments and insurance payouts. No batch delays.</p>
+      </div>
+      <div class="sol-teaser-item">
+        <span class="sol-teaser-ico">🎮</span>
+        <h3>Creators, refunds & more</h3>
+        <p>Creator payouts, e-commerce refunds, B2B settlements. Same rails, same speed.</p>
+      </div>
+    </div>
+    <div class="sol-use-cases-cta rv" data-d="80">
+      <a href="../index.html#use-cases" class="btn btn-dark">See use cases by industry <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec sol-mockup-sec">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <h2>Payouts in <em>action</em></h2>
+      <p>Batch disbursement with live progress. One endpoint, real-time status. Integration is simple — and we keep it that way.</p>
+    </div>
+    <div class="sol-mockup-wrap sol-mockup-spectacular rv" data-d="80">
+      <div class="sol-mockup sol-mockup-payout" id="payoutSolMock">
+        <div class="sm-po-header">
+          <h4>Batch Payout — Live</h4>
+          <span class="sm-po-badge">Processing</span>
+        </div>
+        <div class="sm-po-summary">
+          <div class="sm-po-row"><span>Total</span><strong>$48,200</strong></div>
+          <div class="sm-po-row"><span>Recipients</span><strong>142</strong></div>
+        </div>
+        <div class="sm-po-list" id="payoutSolList">
+          <div class="sm-po-item"><div class="sm-po-av" style="background:#4e2cd1">CM</div><div class="sm-po-info"><span>Carlos M.</span><small>Lima · S/ 850</small></div><span class="sm-po-status done">✓</span></div>
+          <div class="sm-po-item"><div class="sm-po-av" style="background:#00B890">AL</div><div class="sm-po-info"><span>Ana L.</span><small>Santiago · $42,000</small></div><span class="sm-po-status done">✓</span></div>
+          <div class="sm-po-item"><div class="sm-po-av" style="background:#8B5CF6">JR</div><div class="sm-po-info"><span>Jorge R.</span><small>Bogotá · $185,000</small></div><span class="sm-po-status done">✓</span></div>
+          <div class="sm-po-item"><div class="sm-po-av" style="background:#F59E0B">MF</div><div class="sm-po-info"><span>María F.</span><small>CDMX · $2,400</small></div><span class="sm-po-status progress">...</span></div>
+        </div>
+        <div class="sm-secure">🔒 97.6% &lt;1 min · AES-256 · 2FA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sol-dev-block rv" data-d="80">
+      <div class="sec-head center">
+        <h2>Built for <em>developers</em></h2>
+        <p>Simple integration. One endpoint for single or mass payouts. Webhooks for status updates. Docs, SDKs, sandbox. World-class security so you can ship with confidence.</p>
+      </div>
+      <div class="sol-dev-feats">
+        <div class="sol-dev-feat"><span class="sol-dev-feat-dot"></span>Single or batch in one API call</div>
+        <div class="sol-dev-feat"><span class="sol-dev-feat-dot"></span>Webhooks for real-time status and reconciliation</div>
+        <div class="sol-dev-feat"><span class="sol-dev-feat-dot"></span>Sandbox with test bank accounts and flows</div>
+        <div class="sol-dev-feat"><span class="sol-dev-feat-dot"></span>AES-256, 2FA, PCI DSS — standard worldwide</div>
+      </div>
+      <div class="sol-dev-ctas">
+        <a href="../index.html#cta" class="btn btn-dark">Integrate Payouts</a>
+        <a href="#" class="btn btn-ghost">View documentation</a>
+      </div>
+      <div class="sol-terminal-wrap rv" data-d="120">
+        <div class="sol-terminal-header">
+          <span class="sol-terminal-dot r"></span>
+          <span class="sol-terminal-dot y"></span>
+          <span class="sol-terminal-dot g"></span>
+          <span class="sol-terminal-title">terminal — batch payout</span>
+        </div>
+        <div class="sol-terminal">
+          <span class="line"><span class="cmd">$</span> curl -X POST https://api.monnet.com/v1/payouts/batch \</span>
+          <span class="line">  -H <span class="str">"Authorization: Bearer sk_live_..."</span> \</span>
+          <span class="line">  -d <span class="str">'{"recipients":[{"id":"r1","bank_id":"...","amount":850,"currency":"PEN"},...]}'</span></span>
+          <span class="line"><span class="str">{"id":"batch_xyz","status":"processing","count":142}</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--ink);padding:80px 0;position:relative;overflow:hidden">
+  <div class="cta-glow"></div>
+  <div class="wrap">
+    <div class="cta-inner rv" style="position:relative;z-index:1">
+      <h2 style="color:#fff;margin-bottom:16px">Start sending payouts <em style="color:var(--green)">today.</em></h2>
+      <p class="lead" style="color:rgba(255,255,255,.5);margin-bottom:32px">97.6% in under 1 minute. One API. World-class security. Talk to sales or try the sandbox.</p>
+      <a href="../index.html#cta" class="btn btn-green btn-lg">Contact Sales</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="../index.html" class="logo logo-footer">
+          <img src="../assets/monnet-logo.svg" alt="Monnet" class="logo-img">
+        </a>
+        <p>Transactional technology for Latin America. One API. All markets.</p>
+        <div class="socials"><a href="#" class="soc">in</a><a href="#" class="soc">𝕏</a><a href="#" class="soc">yt</a></div>
+      </div>
+      <div class="fcol"><h5>Products</h5><a href="payins.html">Payins</a><a href="payouts.html">Payouts</a><a href="platform.html">Platform</a><a href="#">Dashboard</a></div>
+      <div class="fcol"><h5>Developers</h5><a href="#">API Reference</a><a href="#">SDKs</a><a href="#">Sandbox</a><a href="#">Status</a></div>
+      <div class="fcol"><h5>Company</h5><a href="../about.html">About</a><a href="../coverage.html">Coverage</a><a href="../about.html#security">Security</a><a href="#">Contact</a></div>
+    </div>
+  </div>
+  <div class="foot-bottom wrap">
+    <p>© 2025 Monnet Payment Solutions. All rights reserved.</p>
+    <div class="foot-legal"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a></div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+(function() {
+  var list = document.getElementById('payoutSolList');
+  if (!list) return;
+  var items = list.querySelectorAll('.sm-po-item');
+  var last = items[items.length - 1];
+  var status = last && last.querySelector('.sm-po-status');
+  function run() {
+    if (status) {
+      status.classList.remove('done');
+      status.classList.add('progress');
+      status.textContent = '...';
+    }
+    setTimeout(function() {
+      if (status) {
+        status.classList.remove('progress');
+        status.classList.add('done');
+        status.textContent = '✓';
+      }
+    }, 1800);
+  }
+  run();
+  setInterval(run, 3500);
+})();
+</script>
+<script>
+(function() {
+  var mock = document.getElementById('payoutHeroMock');
+  if (!mock) return;
+  var steps = mock.querySelectorAll('.po-step');
+  var screens = mock.querySelectorAll('.po-pro-screen');
+  var uploadZone = document.getElementById('poUploadZone');
+  var uploadDone = document.getElementById('poUploadDone');
+  var validateStatus = document.getElementById('poValidateStatus');
+  var validateDone = document.getElementById('poValidateDone');
+  var progressFill = document.getElementById('poProgressFill');
+  var progressText = document.getElementById('poProgressText');
+  var sendBtn = document.getElementById('poSendBtn');
+  var st3 = document.getElementById('poSt3');
+  var progressWrap = mock ? mock.querySelector('.po-send-progress') : null;
+
+  function setStep(n) {
+    steps.forEach(function(s) { s.classList.remove('active'); if (s.getAttribute('data-step') === String(n)) s.classList.add('active'); });
+    screens.forEach(function(s) { s.classList.remove('active'); if (s.getAttribute('data-screen') === String(n)) s.classList.add('active'); });
+  }
+
+  function reset() {
+    setStep(1);
+    if (uploadZone) uploadZone.classList.remove('uploaded');
+    if (uploadDone) uploadDone.classList.remove('show');
+    if (validateStatus) validateStatus.style.display = '';
+    if (validateDone) validateDone.classList.remove('show');
+    if (progressFill) progressFill.style.width = '0';
+    if (progressText) progressText.textContent = 'Enviando… 0/142';
+    if (progressWrap) progressWrap.classList.remove('visible');
+    if (sendBtn) { sendBtn.classList.remove('sent'); sendBtn.textContent = 'Ejecutar dispersión'; sendBtn.style.display = ''; }
+    if (st3) { st3.textContent = '…'; st3.classList.add('sending'); }
+  }
+
+  function runCycle() {
+    reset();
+    setTimeout(function() {
+      if (uploadZone) uploadZone.classList.add('uploaded');
+      if (uploadDone) uploadDone.classList.add('show');
+    }, 1800);
+    setTimeout(function() {
+      setStep(2);
+      if (validateStatus) validateStatus.style.display = 'block';
+      if (validateDone) validateDone.classList.remove('show');
+      setTimeout(function() {
+        if (validateStatus) validateStatus.style.display = 'none';
+        if (validateDone) validateDone.classList.add('show');
+      }, 2000);
+    }, 3500);
+    setTimeout(function() {
+      setStep(3);
+      if (sendBtn) sendBtn.style.display = 'block';
+      setTimeout(function() {
+        if (sendBtn) { sendBtn.classList.add('sent'); sendBtn.textContent = 'Dispersión completada'; sendBtn.style.display = 'none'; }
+        if (progressWrap) progressWrap.classList.add('visible');
+        if (progressFill) progressFill.style.width = '100%';
+        if (progressText) progressText.textContent = 'Enviado 142/142 ✓';
+        if (st3) { st3.textContent = '✓'; st3.classList.remove('sending'); }
+        var n = 0;
+        var iv = setInterval(function() {
+          n += 8;
+          if (n <= 142 && progressText) progressText.textContent = 'Enviando… ' + Math.min(n, 142) + '/142';
+          if (n >= 142) clearInterval(iv);
+        }, 40);
+      }, 1200);
+    }, 6000);
+    setTimeout(function() { runCycle(); }, 11500);
+  }
+
+  setTimeout(runCycle, 800);
+})();
+</script>
+</body>
+</html>
