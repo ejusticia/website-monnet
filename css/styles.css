@@ -1008,7 +1008,8 @@ footer{background:#060A10;padding:64px 0 0}
   nav ul,.nav-login{display:none}
   .lang-switcher{display:flex!important}
   .uc-grid,.testi-grid,.team-grid,.stats-row{grid-template-columns:1fr}
-  .stat{border-right:none}
+  .stat{border-right:none;padding:24px}
+  .stat:first-child{padding-left:24px}
   .stat:last-child{border-bottom:none}
   #cta{padding:72px 0}
   .cta-box{padding:48px 24px}
