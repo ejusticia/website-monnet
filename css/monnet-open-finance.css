@@ -402,3 +402,34 @@ nav ul a,.nav-login{border-radius:10px !important;font-weight:600 !important}
 .lang-link.is-active{background:transparent !important;box-shadow:none !important;color:#1f2a3d !important}
 .lang-sep{font-size:10px !important;color:rgba(31,42,61,.28) !important}
 @media(max-width:768px){#nav{padding:8px 12px 0 !important}#nav .nav-i{border-radius:14px !important}.lang-switcher{opacity:.72}}
+
+/* Responsive and UI polish from review */
+@media (min-width:1025px){
+  .enterprise-hero{padding:126px 0 70px !important;min-height:calc(100vh - 20px) !important;}
+  .enterprise-hero-grid{grid-template-columns:minmax(330px,.92fr) minmax(460px,1.08fr)!important;gap:58px!important;max-width:1220px!important;}
+  .enterprise-hero .hero-title{font-size:clamp(42px,5vw,68px)!important;line-height:1.02!important;max-width:760px!important;}
+  .enterprise-hero .hero-sub{font-size:17px!important;max-width:560px!important;}
+  .network-console{max-width:590px!important;min-width:460px!important;}
+  .console-body{padding:18px!important;}
+}
+@media (max-width:760px){
+  .enterprise-hero{padding-top:104px!important;}
+  .page-solution #hero.hero-has-mockup .hero-right,
+  .enterprise-products .pp-right{display:flex!important;justify-content:center!important;width:100%!important;overflow:visible!important;}
+  .hero-sol-mockup{margin-left:auto!important;margin-right:auto!important;max-width:min(92vw,360px)!important;width:100%!important;transform-origin:center center!important;}
+  .hero-sol-mockup .sol-mockup,
+  .payin-mock,.payout-mock,.orch-mock{margin-left:auto!important;margin-right:auto!important;max-width:min(92vw,380px)!important;width:100%!important;}
+  .enterprise-products .prod-panel{padding:22px 14px!important;margin-left:auto!important;margin-right:auto!important;overflow:hidden!important;}
+  .enterprise-products .pp-left{padding-left:2px!important;padding-right:2px!important;}
+  .pm-steps{gap:5px!important;justify-content:center!important;}
+  .pm-step{font-size:11px!important;padding:7px 9px!important;flex:0 0 auto!important;}
+}
+.cov-cap-ico,.strength-ico,.security-icon,.feat-icon,.cov-pt-ico,.sol-benefit-ico,.sol-teaser-ico{
+  display:inline-flex!important;align-items:center!important;justify-content:center!important;
+  width:44px!important;height:44px!important;min-width:44px!important;max-width:44px!important;
+  border-radius:14px!important;background:linear-gradient(135deg,rgba(57,90,232,.1),rgba(19,183,255,.08))!important;
+  border:1px solid rgba(57,90,232,.14)!important;color:var(--of-blue)!important;
+  font-size:20px!important;line-height:1!important;margin-bottom:16px!important;
+}
+.sol-benefit-ico,.sol-teaser-ico{font-size:21px!important;}
+.sol-benefit-card,.sol-teaser-item,.cov-cap-card,.strength-card{overflow:hidden!important;}
