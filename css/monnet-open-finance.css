@@ -433,3 +433,7 @@ nav ul a,.nav-login{border-radius:10px !important;font-weight:600 !important}
 }
 .sol-benefit-ico,.sol-teaser-ico{font-size:21px!important;}
 .sol-benefit-card,.sol-teaser-item,.cov-cap-card,.strength-card{overflow:hidden!important;}
+
+/* Console logo inside hero mockup */
+.console-brand .console-logo{height:24px;width:auto;display:block;object-fit:contain;margin-right:2px}
+.console-brand em{margin-left:4px}
