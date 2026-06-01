@@ -470,3 +470,16 @@ nav ul a,.nav-login{border-radius:10px !important;font-weight:600 !important}
   border-radius:22px!important;
 }
 .hero-dash-trx-title{color:#718098!important}
+
+/* Keep platform hero dashboard visible even if scroll-triggered JS does not run */
+#platformDash .dash-panel-anim,
+#platformDash .hero-dash-kpi,
+#platformDash .hero-dash-chart-methods{
+  opacity:1!important;
+  transform:none!important;
+}
+#platformDash .method-bar[data-w="52"]{width:52%!important}
+#platformDash .method-bar[data-w="28"]{width:28%!important}
+#platformDash .method-bar[data-w="14"]{width:14%!important}
+#platformDash .method-bar[data-w="6"]{width:6%!important}
+#platformDash .hero-dash-body{min-height:320px!important}
