@@ -372,6 +372,7 @@ footer{background:#060A10;padding:64px 0 0}
   .logos-label{display:none}
 }
 </style>
+<link rel="stylesheet" href="../css/monnet-open-finance.css">
 </head>
 <body>
 
@@ -429,25 +430,25 @@ footer{background:#060A10;padding:64px 0 0}
         <div class="dm-header">
           <div class="dm-logo">
             <div class="lm"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1L10.5 3.5V8.5L6 11L1.5 8.5V3.5L6 1Z" stroke="white" stroke-width="1.2" fill="none"/></svg></div>
-            Monnet Dashboard
+            Monnet Connect
           </div>
-          <div class="dm-status">Live</div>
+          <div class="dm-status">Live API</div>
         </div>
         <div class="dm-body">
           <div class="dm-stats">
             <div class="dm-stat">
-              <div class="lbl">Today's Volume</div>
+              <div class="lbl">Open finance volume</div>
               <div class="val" id="volCounter">$0</div>
               <div class="chg">↑ 12.4% vs yesterday</div>
             </div>
             <div class="dm-stat">
-              <div class="lbl">Transactions</div>
+              <div class="lbl">API events</div>
               <div class="val" id="txnCounter">0</div>
               <div class="chg">↑ 8.2% vs yesterday</div>
             </div>
           </div>
           <div class="dm-chart">
-            <div class="lbl">Hourly volume — all markets</div>
+            <div class="lbl">Bank rails — all markets</div>
             <div class="chart-bars" id="chartBars"></div>
           </div>
           <div class="dm-txns" id="dmTxns"></div>
@@ -527,18 +528,18 @@ footer{background:#060A10;padding:64px 0 0}
       </div>
       <div class="pp-right">
         <div class="payin-mock" id="payinMock">
-          <div class="pm-title">Instant bank transfer</div>
+          <div class="pm-title">Pay by bank checkout</div>
           <div class="pm-amount"><span class="am">$129</span><span class="cy">USD</span></div>
           <div class="pm-steps">
             <div class="pm-step active" data-step="1">1. Bank</div>
-            <div class="pm-step" data-step="2">2. 2FA</div>
-            <div class="pm-step" data-step="3">3. Success</div>
+            <div class="pm-step" data-step="2">2. Auth</div>
+            <div class="pm-step" data-step="3">3. Confirm</div>
           </div>
           <div class="pm-content" id="pmContent">
             <!-- Step content is rendered by JavaScript -->
           </div>
           <button class="pm-btn pm-btn-auto" id="payinBtn" aria-hidden="true" tabindex="-1">Continue</button>
-          <div class="pm-secure">🔒 Secured by Monnet · 2FA · AES-256 encryption</div>
+          <div class="pm-secure">🔒 Monnet Connect · Bank auth · Webhooks</div>
         </div>
       </div>
     </div>
@@ -562,12 +563,12 @@ footer{background:#060A10;padding:64px 0 0}
       </div>
       <div class="pp-right">
         <div class="payout-mock">
-          <div class="po-header"><h4>Batch Payout — Apr 2025</h4><span class="po-badge">Processing</span></div>
+          <div class="po-header"><h4>Payout orchestration — LATAM</h4><span class="po-badge">Processing</span></div>
           <div class="po-summary">
-            <div class="po-card"><div class="pcl">Total Disbursed</div><div class="pcv"><em>$</em>48,200</div></div>
-            <div class="po-card"><div class="pcl">Recipients</div><div class="pcv">142</div></div>
+            <div class="po-card"><div class="pcl">Volume sent</div><div class="pcv"><em>$</em>48,200</div></div>
+            <div class="po-card"><div class="pcl">Verified accounts</div><div class="pcv">142</div></div>
           </div>
-          <div class="po-recipients" id="poRecipients">
+          <div class="po-recipients" id="poVerified accounts">
             <div class="po-recip"><div class="prog" style="width:0%"></div><div class="rav" style="background:#4e2cd1">CM</div><div class="rinfo"><div class="rname">Carlos Mendoza</div><div class="rloc">🇵🇪 Lima, Peru</div></div><div><div class="ramt">S/ 850</div><div class="rst">Paid ✓</div></div></div>
             <div class="po-recip"><div class="prog" style="width:0%"></div><div class="rav" style="background:#00B890">AL</div><div class="rinfo"><div class="rname">Ana López</div><div class="rloc">🇨🇱 Santiago, Chile</div></div><div><div class="ramt">$42,000</div><div class="rst">Paid ✓</div></div></div>
             <div class="po-recip"><div class="prog" style="width:0%"></div><div class="rav" style="background:#8B5CF6">JR</div><div class="rinfo"><div class="rname">Jorge Ruiz</div><div class="rloc">🇨🇴 Bogotá, Colombia</div></div><div><div class="ramt">$185,000</div><div class="rst">Paid ✓</div></div></div>
@@ -596,7 +597,7 @@ footer{background:#060A10;padding:64px 0 0}
       </div>
       <div class="pp-right">
         <div class="orch-mock">
-          <div class="or-header">Multi-country overview</div>
+          <div class="or-header">Open finance routing</div>
           <div class="or-map">
             <svg viewBox="0 0 420 200" fill="none" xmlns="http://www.w3.org/2000/svg" id="orchSvg">
               <!-- Simplified LATAM outline -->
@@ -669,8 +670,8 @@ footer{background:#060A10;padding:64px 0 0}
       <div class="rv" data-d="120">
         <div class="map-mock">
           <div class="map-mock-head">
-            <span>Active markets</span>
-            <div class="live-badge">Live transactions</div>
+            <span>Local connections</span>
+            <div class="live-badge">Live API</div>
           </div>
           <div class="map-area">
             <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px" id="covGrid">
