@@ -1,4 +1,22 @@
 // ── NAV ──────────────────────────────────────────────────────
+const pageLang = document.documentElement.lang?.startsWith('es') ? 'es' : 'en';
+const isSpanish = pageLang === 'es';
+const uiCopy = {
+  completed: isSpanish ? 'Completado' : 'Completed',
+  checkingAccount: isSpanish ? 'Cuenta corriente' : 'Checking account',
+  vistaAccount: isSpanish ? 'Cuenta vista' : 'Sight account',
+  continueBank: isSpanish ? 'Continuar con banco' : 'Continue with bank',
+  authorizePayment: isSpanish ? 'Autoriza el pago en Banco de Chile' : 'Authorize payment in Banco de Chile',
+  sent2fa: isSpanish ? 'Hemos enviado un código 2FA a tu app del banco.' : 'We sent a 2FA code to your bank app.',
+  autoValidate: isSpanish ? 'Tu código se valida automáticamente cuando lo completas.' : 'Your code is validated automatically when completed.',
+  confirmCode: isSpanish ? 'Confirmar código' : 'Confirm code',
+  paymentConfirmed: isSpanish ? 'Pago confirmado' : 'Payment confirmed',
+  transferReceived: isSpanish ? 'Tu transferencia se ha recibido correctamente. Estamos redirigiéndote al comercio...' : 'Your bank transfer was received successfully. Redirecting you to the merchant...',
+  redirecting: isSpanish ? 'redirigiendo a merchant.com' : 'redirecting to merchant.com',
+  returnMerchant: isSpanish ? 'Volver al comercio' : 'Return to merchant',
+  instant: isSpanish ? 'Instantáneo' : 'Instant',
+};
+
 const nav = document.getElementById('nav');
 if (nav) {
   addEventListener(
@@ -61,10 +79,10 @@ if (dashMockEl) {
 }
 
 const txns = [
-  { ico: '🇵🇪', bg: '#E8F5F1', name: 'Pay-in — Lima', meta: 'Bank transfer · PEN', amt: '+S/ 1,240', pos: true },
-  { ico: '🇨🇱', bg: '#E8EEFA', name: 'Pay-in — Santiago', meta: 'ETpay · CLP', amt: '+$42,000', pos: true },
-  { ico: '🇨🇴', bg: '#FFF3E8', name: 'Payout — Bogotá', meta: 'Mass payout · COP', amt: '-$185,000', pos: false },
-  { ico: '🇲🇽', bg: '#F0EEFF', name: 'Pay-in — CDMX', meta: 'SPEI · MXN', amt: '+$2,400', pos: true },
+  { ico: '🇵🇪', bg: '#E8F5F1', name: isSpanish ? 'Cobro — Lima' : 'Pay-in — Lima', meta: isSpanish ? 'Transferencia bancaria · PEN' : 'Bank transfer · PEN', amt: '+S/ 1,240', pos: true },
+  { ico: '🇨🇱', bg: '#E8EEFA', name: isSpanish ? 'Cobro — Santiago' : 'Pay-in — Santiago', meta: 'ETpay · CLP', amt: '+$42,000', pos: true },
+  { ico: '🇨🇴', bg: '#FFF3E8', name: 'Payout — Bogotá', meta: isSpanish ? 'Pago masivo · COP' : 'Mass payout · COP', amt: '-$185,000', pos: false },
+  { ico: '🇲🇽', bg: '#F0EEFF', name: isSpanish ? 'Cobro — CDMX' : 'Pay-in — CDMX', meta: 'SPEI · MXN', amt: '+$2,400', pos: true },
 ];
 
 const bars = [35, 55, 42, 68, 52, 78, 91, 65, 80, 74, 88, 95];
@@ -103,7 +121,7 @@ if (txnsEl) {
   txns.forEach((t, i) => {
     const d = document.createElement('div');
     d.className = 'dm-txn';
-    d.innerHTML = `<div class="txn-ico" style="background:${t.bg}">${t.ico}</div><div class="txn-info"><div class="txn-name">${t.name}</div><div class="txn-meta">${t.meta}</div></div><div style="text-align:right"><div class="txn-amt ${t.pos ? 'pos' : ''}">${t.amt}</div><div class="txn-st">Completed</div></div>`;
+    d.innerHTML = `<div class="txn-ico" style="background:${t.bg}">${t.ico}</div><div class="txn-info"><div class="txn-name">${t.name}</div><div class="txn-meta">${t.meta}</div></div><div style="text-align:right"><div class="txn-amt ${t.pos ? 'pos' : ''}">${t.amt}</div><div class="txn-st">${uiCopy.completed}</div></div>`;
     txnsEl.appendChild(d);
     setTimeout(() => d.classList.add('in'), 1100 + i * 220);
   });
@@ -151,7 +169,7 @@ function renderStep(step) {
           <span class="mico">🏦</span>
           <div class="minfo">
             <div class="mname">Banco de Chile</div>
-            <div class="msub">Cuenta corriente · **** 4521</div>
+            <div class="msub">${uiCopy.checkingAccount} · **** 4521</div>
           </div>
           <div class="mcheck"></div>
         </div>
@@ -159,7 +177,7 @@ function renderStep(step) {
           <span class="mico">🏦</span>
           <div class="minfo">
             <div class="mname">Santander Chile</div>
-            <div class="msub">Cuenta vista · **** 7803</div>
+            <div class="msub">${uiCopy.vistaAccount} · **** 7803</div>
           </div>
           <div class="mcheck"></div>
         </div>
@@ -167,19 +185,19 @@ function renderStep(step) {
           <span class="mico">🏦</span>
           <div class="minfo">
             <div class="mname">Scotiabank Chile</div>
-            <div class="msub">Cuenta corriente · **** 2198</div>
+            <div class="msub">${uiCopy.checkingAccount} · **** 2198</div>
           </div>
           <div class="mcheck"></div>
         </div>
       </div>
     `;
     attachBankSelection();
-    if (pmBtn) pmBtn.textContent = 'Continuar con banco';
+    if (pmBtn) pmBtn.textContent = uiCopy.continueBank;
   } else if (step === 2) {
     pmContent.innerHTML = `
       <div class="pm-2fa">
-        <p class="pm-2fa-title">Autoriza el pago en Banco de Chile</p>
-        <p class="pm-2fa-sub">Hemos enviado un código 2FA a tu app del banco.</p>
+        <p class="pm-2fa-title">${uiCopy.authorizePayment}</p>
+        <p class="pm-2fa-sub">${uiCopy.sent2fa}</p>
         <div class="pm-2fa-inputs" id="pm2faInputs">
           <input type="text" maxlength="1" inputmode="numeric" data-idx="0">
           <input type="text" maxlength="1" inputmode="numeric" data-idx="1">
@@ -188,25 +206,25 @@ function renderStep(step) {
           <input type="text" maxlength="1" inputmode="numeric" data-idx="4">
           <input type="text" maxlength="1" inputmode="numeric" data-idx="5">
         </div>
-        <p class="pm-2fa-hint">Tu código se valida automáticamente cuando lo completas.</p>
+        <p class="pm-2fa-hint">${uiCopy.autoValidate}</p>
       </div>
     `;
-    if (pmBtn) pmBtn.textContent = 'Confirmar código';
+    if (pmBtn) pmBtn.textContent = uiCopy.confirmCode;
     startOtpTypingEffect();
   } else if (step === 3) {
     pmContent.innerHTML = `
       <div class="pm-success">
         <div class="pm-success-icon">✓</div>
-        <p class="pm-success-title">Pago confirmado</p>
-        <p class="pm-success-sub">Tu transferencia se ha recibido correctamente. Estamos redirigiéndote al comercio...</p>
+        <p class="pm-success-title">${uiCopy.paymentConfirmed}</p>
+        <p class="pm-success-sub">${uiCopy.transferReceived}</p>
         <div class="pm-success-redirect">
-          <span>redirecting to merchant.com</span>
+          <span>${uiCopy.redirecting}</span>
           <div class="pm-success-bar"><div class="pm-success-bar-inner"></div></div>
         </div>
       </div>
     `;
     if (pmBtn) {
-      pmBtn.textContent = 'Volver al comercio';
+      pmBtn.textContent = uiCopy.returnMerchant;
     }
   }
 }
@@ -281,33 +299,33 @@ function initPayouts() {
 const feedData = [
   {
     flag: '🇵🇪',
-    text: 'Pay-in via Yape · Lima',
+    text: isSpanish ? 'Cobro via Yape · Lima' : 'Pay-in via Yape · Lima',
     amount: '+S/ 340',
-    tag: 'Instant',
+    tag: uiCopy.instant,
   },
   {
     flag: '🇨🇱',
-    text: 'Payout via ETpay · Santiago',
+    text: isSpanish ? 'Payout via ETpay · Santiago' : 'Payout via ETpay · Santiago',
     amount: '-$12,000',
-    tag: 'Completed',
+    tag: uiCopy.completed,
   },
   {
     flag: '🇧🇷',
-    text: 'Pay-in via PIX · São Paulo',
+    text: isSpanish ? 'Cobro via PIX · São Paulo' : 'Pay-in via PIX · São Paulo',
     amount: '+R$ 890',
-    tag: 'Instant',
+    tag: uiCopy.instant,
   },
   {
     flag: '🇲🇽',
-    text: 'Pay-in via SPEI · CDMX',
+    text: isSpanish ? 'Cobro via SPEI · CDMX' : 'Pay-in via SPEI · CDMX',
     amount: '+$1,800',
-    tag: 'Instant',
+    tag: uiCopy.instant,
   },
   {
     flag: '🇨🇴',
-    text: 'Payout to Bancolombia',
+    text: isSpanish ? 'Payout a Bancolombia' : 'Payout to Bancolombia',
     amount: '-$45,000',
-    tag: 'Completed',
+    tag: uiCopy.completed,
   },
 ];
 
