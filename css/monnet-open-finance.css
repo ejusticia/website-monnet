@@ -442,3 +442,31 @@ nav ul a,.nav-login{border-radius:10px !important;font-weight:600 !important}
 .console-brand{gap:12px!important}
 .console-brand .console-mark{display:none!important}
 .console-brand .console-logo{height:30px!important;max-width:150px!important}
+
+/* Platform dashboard mockup now uses Monnet brand */
+.hero-dash-header{
+  background:linear-gradient(180deg,#fff,#f7faff)!important;
+  font-weight:800!important;
+  letter-spacing:-.02em;
+}
+.hero-dash-header .sm-store-logo-monnet{
+  width:auto!important;
+  height:26px!important;
+  min-width:112px!important;
+  padding:0!important;
+  border:none!important;
+  border-radius:0!important;
+  background:transparent!important;
+  margin-right:8px!important;
+}
+.hero-dash-card{
+  border-radius:32px!important;
+  border:1px solid rgba(18,31,53,.09)!important;
+  box-shadow:0 34px 86px rgba(18,31,53,.12)!important;
+}
+.hero-dash-kpi,.hero-dash-chart-methods,.hero-dash-trx-grid-wrap{
+  background:#f7faff!important;
+  border:1px solid rgba(18,31,53,.08)!important;
+  border-radius:22px!important;
+}
+.hero-dash-trx-title{color:#718098!important}
