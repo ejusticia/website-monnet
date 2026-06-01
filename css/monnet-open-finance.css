@@ -437,3 +437,8 @@ nav ul a,.nav-login{border-radius:10px !important;font-weight:600 !important}
 /* Console logo inside hero mockup */
 .console-brand .console-logo{height:24px;width:auto;display:block;object-fit:contain;margin-right:2px}
 .console-brand em{margin-left:4px}
+
+/* Hero console brand uses the official Monnet logo only */
+.console-brand{gap:12px!important}
+.console-brand .console-mark{display:none!important}
+.console-brand .console-logo{height:30px!important;max-width:150px!important}
